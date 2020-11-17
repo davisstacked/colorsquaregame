@@ -18,7 +18,8 @@ const squaresContainer = document.getElementById('squares');
 
 // EVENT LISTENERS 
 
-start.addEventListener("click", handleStartGame);
+start.addEventListener('click', handleStartGame);
+squaresContainer.addEventListener('click', handleSquareClick);
 
 // FUNCTION DECLARATIONS
 
@@ -32,6 +33,7 @@ function startTimer() {
         if (time > 0) {
             time--;
             console.log(time);
+            updateTime();
         } else {
             console.log('Time is up');
             clearInterval(timer);
@@ -39,23 +41,27 @@ function startTimer() {
     }, 1000)
 }
 
-// How many squares
-// Create a div element for each square
-// Colors array of 'red', 'blue', 'green', and 'purple'
-// Random number
-// Random index to get a random color 
-// Apply the random color to the div as background-color 
-// Append the square to the parent '.squares' element
+function updateTime() {
+    // Select the time element
+    // on each interval, update the time element with new time value
+    const timer = document.getElementById('timer');
+    timer.innerText = time;
+}
+
 
 function createSquares(numberOfSquares) {
     for (let i = 1; i <= numberOfSquares; i++) {
 
         const square = document.createElement('div');
         square.style.backgroundColor = getRandomColor();
+        square.classList.add('square');
         squaresContainer.appendChild(square);
 
     }
 }
+
+
+
 
 function getRandomColor() {
     const colors = ['red', 'blue', 'green', 'purple'];
@@ -63,4 +69,15 @@ function getRandomColor() {
     const randomColor = colors[randomIndex];
     return randomColor;
     
+}
+
+
+
+
+
+function handleSquareClick(event) {
+    
+    if() {
+        console.log('Square clicked!')
+    }
 }
