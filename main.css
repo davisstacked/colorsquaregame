@@ -24,7 +24,7 @@ button {
     margin: 0 auto;
 }
 
-.squares div {
+#squares div {
     width: 5vh;
     height: 5vh;
     margin-right: 1%;

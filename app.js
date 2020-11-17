@@ -13,7 +13,9 @@ let time = 3;
 
 // CACHED DOM ELEMENTS
 
-const start = document.getElementById('start')
+const start = document.getElementById('start');
+const squaresContainer = document.getElementById('squares');
+console.log(squaresContainer);
 
 // EVENT LISTENERS 
 
@@ -23,6 +25,7 @@ start.addEventListener("click", handleStartGame);
 
 function handleStartGame() {
     startTimer();
+    createSquares();
 }
 
 function startTimer() {
@@ -37,3 +40,18 @@ function startTimer() {
     }, 1000)
 }
 
+// How many squares
+// Create a div element for each square
+// Colors array of 'red', 'blue', 'green', and 'purple'
+// Random number
+// Random index to get a random color 
+// Apply the random color to the div as background-color 
+// Append the square to the parent '.squares' element
+
+function createSquares(numberOfSquares) {
+    const colors = ['red', 'blue', 'green', 'purple'];
+    const square = document.createElement('div');
+    square.style.backgroundColor = 'blue';
+    console.log(square);
+    console.log(squaresContainer.appendChild(square));
+}
