@@ -58,7 +58,9 @@ function createSquares(numberOfSquares) {
 }
 
 function getRandomColor() {
-    // const colors = ['red', 'blue', 'green', 'purple'];
-    // const randomIndex = Math.floor(Math.random() * colors.length)
-    return 'purple';
+    const colors = ['red', 'blue', 'green', 'purple'];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    const randomColor = colors[randomIndex];
+    return randomColor;
+    
 }
