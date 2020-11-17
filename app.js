@@ -15,7 +15,6 @@ let time = 3;
 
 const start = document.getElementById('start');
 const squaresContainer = document.getElementById('squares');
-console.log(squaresContainer);
 
 // EVENT LISTENERS 
 
@@ -25,7 +24,7 @@ start.addEventListener("click", handleStartGame);
 
 function handleStartGame() {
     startTimer();
-    createSquares();
+    createSquares(squareCount);
 }
 
 function startTimer() {
@@ -49,9 +48,17 @@ function startTimer() {
 // Append the square to the parent '.squares' element
 
 function createSquares(numberOfSquares) {
-    const colors = ['red', 'blue', 'green', 'purple'];
-    const square = document.createElement('div');
-    square.style.backgroundColor = 'blue';
-    console.log(square);
-    console.log(squaresContainer.appendChild(square));
+    for (let i = 1; i <= numberOfSquares; i++) {
+
+        const square = document.createElement('div');
+        square.style.backgroundColor = getRandomColor();
+        squaresContainer.appendChild(square);
+
+    }
+}
+
+function getRandomColor() {
+    // const colors = ['red', 'blue', 'green', 'purple'];
+    // const randomIndex = Math.floor(Math.random() * colors.length)
+    return 'purple';
 }
