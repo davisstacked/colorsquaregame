@@ -10,6 +10,7 @@
 
 const squareCount = 25;
 let time = 3;
+let score = 0;
 
 // CACHED DOM ELEMENTS
 
@@ -77,16 +78,19 @@ function getRandomColor() {
 
 
 function handleSquareClick(event) {
-    //  console.log(event.target.classList.contains('square'));
     if(event.target.classList.contains('square')) {
         squaresContainer.removeChild(event.target);
+
+        const squareColor = event.target.style.backgroundColor;
+        
+        checkScore(squareColor);
     }
 }
 
 
 
 
-function updateScore(color) {
+function checkScore(color) {
     if(color === "blue") {
         score++;
         console.log(`You scored! Score = ${score}`)
