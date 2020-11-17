@@ -15,6 +15,7 @@ let time = 3;
 
 const start = document.getElementById('start');
 const squaresContainer = document.getElementById('squares');
+const scoreboard = document.querySelector('h1')
 
 // EVENT LISTENERS 
 
@@ -76,8 +77,23 @@ function getRandomColor() {
 
 
 function handleSquareClick(event) {
-    
-    if() {
-        console.log('Square clicked!')
+    //  console.log(event.target.classList.contains('square'));
+    if(event.target.classList.contains('square')) {
+        squaresContainer.removeChild(event.target);
+    }
+}
+
+
+
+
+function updateScore(color) {
+    if(color === "blue") {
+        score++;
+        console.log(`You scored! Score = ${score}`)
+        scoreboard.innerText = `Scoreboard: ${score}`;
+    } else {
+        score--;
+        console.log(`You lost a point! Score = ${score}`)
+        scoreboard.innerText = `Scoreboard: ${score}`;
     }
 }
